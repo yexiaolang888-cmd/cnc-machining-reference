@@ -1,0 +1,185 @@
+{
+  "_meta": {
+    "title": "CNC machining starting parameters by material",
+    "maintainer": "YEYUAN CNC (https://yeyuancnc.com)",
+    "disclaimer": "Starting points only. Adjust for machine rigidity, tool geometry, holder, and workholding. Verify before cutting production parts.",
+    "units": {
+      "surface_speed": "m/min",
+      "feed_per_tooth": "mm/tooth",
+      "feed_rate_note": "mm/min = RPM x flutes x feed_per_tooth"
+    },
+    "last_updated": "2026-09"
+  },
+  "aluminum": [
+    {
+      "material": "Aluminum 6061-T6",
+      "surface_speed_m_min": [300, 500],
+      "feed_per_tooth_mm": [0.1, 0.25],
+      "tooling": "2-3 flute carbide, uncoated or ZrN; polished flutes for chip evacuation",
+      "coolant": "Flood, mist, or air blast; air is fine for finishing",
+      "notes": "The default alloy. Machines clean at high RPM. Deep pockets need strong chip evacuation or you will recut chips and wreck the finish."
+    },
+    {
+      "material": "Aluminum 7075-T6",
+      "surface_speed_m_min": [250, 400],
+      "feed_per_tooth_mm": [0.1, 0.2],
+      "tooling": "Sharp carbide, 2-3 flute; keep tools fresh",
+      "coolant": "Flood preferred",
+      "notes": "Around 30% higher yield than 6061 and noticeably more abrasive on tooling. Tool wear runs 20-30% faster than 6061. Anodizes darker and less uniformly."
+    },
+    {
+      "material": "Aluminum 5083 / 5052",
+      "surface_speed_m_min": [250, 450],
+      "feed_per_tooth_mm": [0.1, 0.2],
+      "tooling": "2-3 flute carbide",
+      "coolant": "Flood or mist",
+      "notes": "Gummy compared with 6061. Keep the feed up so the tool cuts instead of rubbing, and use a lubricating coolant rather than plain water."
+    }
+  ],
+  "stainless_steel": [
+    {
+      "material": "Stainless 304",
+      "surface_speed_m_min": [60, 120],
+      "feed_per_tooth_mm": [0.05, 0.15],
+      "tooling": "AlTiN or TiAlN coated carbide, 4-5 flute for rigidity",
+      "coolant": "Flood, high pressure if available",
+      "notes": "Work-hardens fast. Never dwell or rub — if the tool stops moving it hardens the surface and kills the next pass. Rigid setup matters more than speed here."
+    },
+    {
+      "material": "Stainless 316L",
+      "surface_speed_m_min": [50, 100],
+      "feed_per_tooth_mm": [0.05, 0.12],
+      "tooling": "AlTiN coated carbide, 4-5 flute",
+      "coolant": "Flood, high pressure",
+      "notes": "Harder to machine than 304 and more prone to work-hardening and galling. Common in medical and marine parts — expect longer cycle times and budget for them."
+    },
+    {
+      "material": "Stainless 17-4 PH",
+      "surface_speed_m_min": [60, 100],
+      "feed_per_tooth_mm": [0.05, 0.12],
+      "tooling": "AlTiN coated carbide",
+      "coolant": "Flood",
+      "notes": "Machine in Condition A (solution treated) then age harden to H900/H1025. Machining after hardening is possible but expensive — plan the sequence."
+    }
+  ],
+  "titanium": [
+    {
+      "material": "Titanium Grade 5 (Ti-6Al-4V)",
+      "surface_speed_m_min": [30, 60],
+      "feed_per_tooth_mm": [0.05, 0.12],
+      "tooling": "Sharp uncoated or AlTiN carbide; positive rake; never a worn tool",
+      "coolant": "High-pressure flood — heat must leave with the chip",
+      "notes": "Low thermal conductivity means heat stays in the cut and in the tool. Conservative speeds, sharp edges, and generous coolant. Thin walls deflect — light radial engagements. Not a material to learn on."
+    },
+    {
+      "material": "Titanium Grade 2 (commercially pure)",
+      "surface_speed_m_min": [40, 80],
+      "feed_per_tooth_mm": [0.05, 0.15],
+      "tooling": "Sharp carbide, uncoated",
+      "coolant": "Flood",
+      "notes": "Softer and gummier than Grade 5. Prone to galling and built-up edge — keep the feed up and the tool sharp."
+    }
+  ],
+  "copper_brass": [
+    {
+      "material": "Copper (C110)",
+      "surface_speed_m_min": [150, 300],
+      "feed_per_tooth_mm": [0.05, 0.15],
+      "tooling": "Sharp carbide, high rake; polished flutes",
+      "coolant": "Flood or mist with lubricity",
+      "notes": "Sticky and abrasive. Chip control is the whole game — peck and clear. Thermal conductivity pulls heat into the part, so watch dimensions on thin features."
+    },
+    {
+      "material": "Brass (C360)",
+      "surface_speed_m_min": [200, 400],
+      "feed_per_tooth_mm": [0.08, 0.2],
+      "tooling": "Sharp carbide, uncoated",
+      "coolant": "Mist or flood; often run dry with air blast",
+      "notes": "One of the easiest materials to machine. Free-cutting. Small chips — manage them so they do not pack into fixtures."
+    }
+  ],
+  "steel": [
+    {
+      "material": "Carbon steel 1018 / 1045",
+      "surface_speed_m_min": [90, 180],
+      "feed_per_tooth_mm": [0.08, 0.2],
+      "tooling": "TiAlN or AlTiN coated carbide, 4 flute",
+      "coolant": "Flood",
+      "notes": "1045 is harder and less forgiving than 1018. Both machine predictably with coated carbide. Watch for stringy chips in low carbon grades."
+    },
+    {
+      "material": "Alloy steel 4140 (annealed)",
+      "surface_speed_m_min": [80, 150],
+      "feed_per_tooth_mm": [0.08, 0.18],
+      "tooling": "TiAlN coated carbide",
+      "coolant": "Flood",
+      "notes": "Machines well annealed (28-32 HRC). Above 35 HRC, move to harder tooling and reduce speeds — or plan for a hard-milling setup."
+    }
+  ],
+  "engineering_plastics": [
+    {
+      "material": "PEEK (unfilled)",
+      "surface_speed_m_min": [200, 400],
+      "feed_per_tooth_mm": [0.1, 0.3],
+      "tooling": "Sharp polished carbide, 2-3 flute; high rake",
+      "coolant": "Air blast or mist — flood optional",
+      "notes": "Machines like a hard plastic but moves after cutting. Stress relieve or anneal before finishing critical dimensions. Sharp tools and generous clearance prevent melting and burrs."
+    },
+    {
+      "material": "PEEK (30% glass or carbon filled)",
+      "surface_speed_m_min": [150, 300],
+      "feed_per_tooth_mm": [0.08, 0.2],
+      "tooling": "Diamond-coated or PCD carbide — abrasive filler destroys standard coatings",
+      "coolant": "Air blast or mist",
+      "notes": "Filler is highly abrasive: expect much shorter tool life. Use PCD or diamond coating for any real volume."
+    },
+    {
+      "material": "PTFE (Teflon)",
+      "surface_speed_m_min": [300, 600],
+      "feed_per_tooth_mm": [0.1, 0.3],
+      "tooling": "Very sharp carbide, high rake, polished flutes",
+      "coolant": "Air blast or mist",
+      "notes": "Soft and slippery — it deflects away from the tool rather than cutting. Sharp tools, light passes, rigid support. Prone to burrs and dimensional movement."
+    },
+    {
+      "material": "PPS",
+      "surface_speed_m_min": [200, 400],
+      "feed_per_tooth_mm": [0.1, 0.25],
+      "tooling": "Sharp carbide, 2-3 flute",
+      "coolant": "Air blast or mist",
+      "notes": "Machines clean. Glass-filled grades behave like filled PEEK — abrasive, shorter tool life."
+    },
+    {
+      "material": "PAI (Torlon)",
+      "surface_speed_m_min": [150, 300],
+      "feed_per_tooth_mm": [0.05, 0.15],
+      "tooling": "Sharp carbide, high rake",
+      "coolant": "Air blast or mist",
+      "notes": "Hard and brittle. Chips break fine — contain them. Coolant contact can cause stress cracking in some grades, so many shops cut it dry with air blast."
+    },
+    {
+      "material": "PEI (Ultem)",
+      "surface_speed_m_min": [200, 400],
+      "feed_per_tooth_mm": [0.1, 0.25],
+      "tooling": "Sharp carbide, 2-3 flute",
+      "coolant": "Air blast or mist",
+      "notes": "Similar to PEEK in behavior but less expensive. Watch for stress crazing if coolant chemistry is wrong."
+    },
+    {
+      "material": "POM (Delrin / acetal)",
+      "surface_speed_m_min": [300, 600],
+      "feed_per_tooth_mm": [0.1, 0.3],
+      "tooling": "Sharp carbide, 2 flute",
+      "coolant": "Air blast or mist",
+      "notes": "Free-machining and dimensionally stable. Do not let it get hot — it can outgas formaldehyde when overheated. Great material for fixtures and test parts."
+    },
+    {
+      "material": "PVDF",
+      "surface_speed_m_min": [200, 400],
+      "feed_per_tooth_mm": [0.1, 0.25],
+      "tooling": "Sharp carbide",
+      "coolant": "Air blast or mist",
+      "notes": "Tougher and stiffer than PTFE, so it machines better. Common in semiconductor wet benches and chemical handling."
+    }
+  ]
+}
