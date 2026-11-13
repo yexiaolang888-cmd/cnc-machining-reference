@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "title": "Inch / millimeter conversion and common tolerance callouts",
+    "maintainer": "YEYUAN CNC (https://yeyuancnc.com)",
+    "note": "Conversions are exact where the inch value is defined; rounded values are marked.",
+    "last_updated": "2026-09"
+  },
+  "exact_conversions": [
+    { "inch": "0.0001\"", "mm": 0.00254, "typical_use": "Gauge / metrology work" },
+    { "inch": "0.0005\"", "mm": 0.0127, "typical_use": "Precision bearing fits" },
+    { "inch": "0.001\"", "mm": 0.0254, "typical_use": "General precision machining default in inch shops" },
+    { "inch": "0.002\"", "mm": 0.0508, "typical_use": "Standard CNC machined feature" },
+    { "inch": "0.005\"", "mm": 0.127, "typical_use": "Non-critical dimensions" },
+    { "inch": "0.010\"", "mm": 0.254, "typical_use": "Loose / clearance dimensions" },
+    { "inch": "1/64\"", "mm": 0.396875, "typical_use": "Stock material" },
+    { "inch": "1/32\"", "mm": 0.79375, "typical_use": "Sheet thickness" },
+    { "inch": "1/16\"", "mm": 1.5875, "typical_use": "Sheet thickness" },
+    { "inch": "1/8\"", "mm": 3.175, "typical_use": "Plate thickness" },
+    { "inch": "1/4\"", "mm": 6.35, "typical_use": "Plate / bar" },
+    { "inch": "1/2\"", "mm": 12.7, "typical_use": "Plate / bar" },
+    { "inch": "1\"", "mm": 25.4, "typical_use": "Reference" }
+  ],
+  "metric_defaults": [
+    { "mm": 0.005, "note": "Tightest practical CNC tolerance on critical features; requires controlled process" },
+    { "mm": 0.01, "note": "Standard precision CNC tolerance" },
+    { "mm": 0.02, "note": "Comfortable precision tolerance for most features" },
+    { "mm": 0.05, "note": "Standard machined tolerance" },
+    { "mm": 0.1, "note": "General machining; outside dimensions" },
+    { "mm": 0.2, "note": "Loose tolerance; low cost impact" }
+  ],
+  "surface_finish_ra": [
+    { "ra_um": 0.4, "ra_uin": 16, "achieved_by": "Fine finishing pass, sharp tool, rigid setup", "note": "Near the practical floor for milling" },
+    { "ra_um": 0.8, "ra_uin": 32, "achieved_by": "Standard finishing pass", "note": "Common spec for sealing surfaces" },
+    { "ra_um": 1.6, "ra_uin": 63, "achieved_by": "Standard machining", "note": "Default machined finish" },
+    { "ra_um": 3.2, "ra_uin": 125, "achieved_by": "Roughing / general machining", "note": "Functional surfaces" },
+    { "ra_um": 6.3, "ra_uin": 250, "achieved_by": "Rough machining", "note": "Non-critical surfaces" }
+  ],
+  "common_threads": [
+    { "thread": "M3x0.5", "tap_drill_mm": 2.5, "clearance_drill_mm": 3.4 },
+    { "thread": "M4x0.7", "tap_drill_mm": 3.3, "clearance_drill_mm": 4.5 },
+    { "thread": "M5x0.8", "tap_drill_mm": 4.2, "clearance_drill_mm": 5.5 },
+    { "thread": "M6x1.0", "tap_drill_mm": 5.0, "clearance_drill_mm": 6.6 },
+    { "thread": "M8x1.25", "tap_drill_mm": 6.8, "clearance_drill_mm": 9.0 },
+    { "thread": "M10x1.5", "tap_drill_mm": 8.5, "clearance_drill_mm": 11.0 },
+    { "thread": "M12x1.75", "tap_drill_mm": 10.2, "clearance_drill_mm": 13.5 },
+    { "thread": "1/4-20 UNC", "tap_drill_mm": 5.11, "clearance_drill_mm": 6.53 },
+    { "thread": "5/16-18 UNC", "tap_drill_mm": 6.53, "clearance_drill_mm": 8.73 },
+    { "thread": "3/8-16 UNC", "tap_drill_mm": 7.94, "clearance_drill_mm": 10.32 }
+  ],
+  "design_guidance": {
+    "tolerance_cost_curve": "Going from ±0.1mm to ±0.01mm on a feature typically multiplies inspection time, adds fixturing, and can require multiple passes. Specify tight tolerance only where function demands it.",
+    "anodize_growth": "Type II anodize grows roughly half its thickness outward (a 25um layer adds ~12um to the surface). Type III hardcoat is thicker and will visibly shrink tapped holes unless masked.",
+    "thin_wall_rule": "A wall under 1mm is a rigidity problem, not a tolerance problem. Maximum unsupported height matters more than the raw thickness number."
+  }
+}
